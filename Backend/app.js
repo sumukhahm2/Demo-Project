@@ -30,13 +30,14 @@ const cors=require('cors')
 const app=express()
 const socketIo = require('socket.io');
 const server = http.createServer(app);
-const io = socketIo(server,{
+const io = socketIo(server, {
     cors: {
-      origin: "http://13.61.4.12:3000",
+      origin: process.env.CLIENT_URL || "http://localhost:3000",
       methods: ["GET", "POST"],
-      "ExposeHeaders": ["Content-Disposition"],
-    }
+      allowedHeaders: ["Content-Disposition"],
+    },
   });
+  
 
   SocketEvents(io)
   app.use(cors())
