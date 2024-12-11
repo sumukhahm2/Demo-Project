@@ -1,0 +1,7 @@
+.home-buttons{
+   cursor: pointer;
+}
+
+.home-buttons:hover{
+    padding: 0px 1px;
+}
